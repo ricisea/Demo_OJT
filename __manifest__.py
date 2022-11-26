@@ -12,10 +12,14 @@
     """,
     'data': [
 	'views/sale_order_views.xml',
+    'views/dp_form.xml',
+    'report/purchase_reports.xml',
+    'report/purchase_order_templates.xml',
+
 
     ],
     "depends": [
-        "sale","sale_management",
+        "sale","sale_management","purchase"
     ],
     'installable': True,
     "images":['static/logo.png'],

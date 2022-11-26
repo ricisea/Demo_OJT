@@ -9,7 +9,18 @@
             <field name= "payment_term_id" position="after">
                 <field name="nomor_telpon"/>
             </field>
-           
+            <field name= "partner_id" position="after">
+                <field name="warehouse_latihan_id" attrs="{'invisible': [('warehouse_all','=',True)]}"/>
+                <field name="warehouse_all" attrs="{'invisible': [('warehouse_latihan_id','!=',False)]}"/>
+            </field>
+            <field name= "amount_untaxed" position="before">
+                <field name="counter_consum" attrs="{'invisible':[('bool_consu','=',True)]}" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                <field name="counter_service" attrs="{'invisible':[('bool_service','=',True)]}" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                <field name="counter_store" attrs="{'invisible':[('bool_store','=',True)]}" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                <field name="bool_consu" invisible="True"/>
+                <field name="bool_service" invisible="True"/>
+                <field name="bool_store" invisible="True"/>
+            </field>
         </field>
     </record>
 </odoo>
